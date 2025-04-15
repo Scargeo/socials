@@ -1,0 +1,60 @@
+express is a framework 
+Sequelize and sequelize- is an ORM(object relational mapping) helps write sql very easily
+npx sequelize init creates the initial files 
+
+nodemon restart the server anytime there is a change in the code
+
+express routing helps codes to locate their various paths
+
+to take data from the front side, you have to destructure the module you want to take the data 
+eg: const {post} = require('../module) 
+
+cors allow you to take request from all angles
+axios helps you to write and text API requests and responds 
+
+routing in react with react-router-dom library
+the library helps you to navigate throgh the app pages 
+
+ES7 react/redux/graphQL is an extension that helps create a react fuctional component (auto completion)
+express doesnt work just by passing raw json format. you have to include app.use (express.json())
+
+use 'exact element' statement instead of exact component in your routes in the new version of react 
+if you put a link on top of a route, it appears in all the pages 
+
+formik is a library that makes form creation very easy without traditional HTML statement. it provides client side validation 
+label gives discription to the field // This is the title of the post
+
+set auto compleate to off to prevent the form from displaying previously used details. it can be ommited to allow auto completion
+'initialValues' is an object where keys match the field names.
+
+yup is a form validation library.
+form validation adds another layer of security to the database
+.min and .max specifies the number of characters that are vailid in the form at the field
+component keyword in the ErrorMessage statement allow you to specifiy which HTML tag you want to create
+
+to use id parameter in react, you have to imploy hook (useParam) from react-router-dom
+to make a clickable section on the page, you need to use the onClick keyword
+useNavigate hook allow you to navigate and redirect to other URL on the application
+
+to display messages individually, you need to create a route that will handle that request
+findByPK means find by primarykey. It helps SQL to locate items by their primary keys 
+
+useState is a hook that allows you to have state variables in functional components.
+you can either import it from react or use it directly from react using the React.useState statement
+
+association help link two database together
+
+divided the comment section into two sides with div and style it with css
+to display the list of comment you have to make a =n API request to get data for the specific post 
+
+to create comments that will automatically appear on the page without refersh and stored in the database, you need to create a fuction that will be called when the add button is called
+
+we use "Data" variable when formik is use
+
+making a user signup, you create a function and a database module that will take username and password as values
+the password should be hashed with bcrypt or any hashing tool.
+
+after a user has been created, the login function should read the username and password as values
+after the user.findone has located a user, display to the screen a success messages
+if (!user) is used to compare the users using bcrypt
+
