@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const {validateToken} = require("../Middleware/authMiddleware"); // import the validateToken middleware
 
 const { Comments } = require("../models");
 
@@ -10,7 +11,7 @@ router.get("/:postId", async (req, res) => {
     res.json(comments);
 });
 
-router.post("/", async (req, res) => {
+router.post("/", validateToken, async (req, res) => {
     const comment = req.body; // grab the comment object from the request body
     await Comments.create(comment).then(comment => {
         res.json(comment);

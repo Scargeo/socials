@@ -1,0 +1,19 @@
+const {verify} = require('jsonwebtoken');
+
+const validateToken = (req, res, next) => {
+    const accessToken = req.header('accessTokem');
+    if (!accessToken) return res.sendStatus(401); // Unauthorized
+
+    try {
+        const validToken = verify(accessToken, "hiddenSecretkey");
+        
+        if (validToken) {
+            return next();
+        }
+    } catch (err) {
+        return res.sendStatus(401); // Unauthorized
+    }
+};    
+
+module.exports = { validateToken };
+// This middleware function checks if the access token is valid. If it is, it calls the next middleware function in the stack. If not, it sends a 401 Unauthorized response.

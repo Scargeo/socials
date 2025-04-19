@@ -58,3 +58,5 @@ after a user has been created, the login function should read the username and p
 after the user.findone has located a user, display to the screen a success messages
 if (!user) is used to compare the users using bcrypt
 
+'sign' function generates the jsonwebtoken.
+headers allow you to passs tokens to the backend

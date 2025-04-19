@@ -22,11 +22,18 @@ function Post() {
     const addComment = () => {
       axios.post("http://localhost:3001/comments", {
         commentBody: newComment, 
-        postId: id})
+        postId: id}, {
+          // added access token to the headers of the request
+          headers: { accessToken: sessionStorage.getItem("accessToken") },
+        })
         .then((response) => {
+          if (response.data.error) {
+            alert(response.data.error); // check if the response has an error
+          } else {
           const commentToAdd = {commentBody: newComment};
-          setComments([...comments, {commentBody: commentToAdd}]);
+          setComments([...comments, commentToAdd]);
           setNewComment(""); // clear the input field after adding the comment
+          }
     });
   };
   return (
@@ -48,7 +55,7 @@ function Post() {
             id="commentText"
             value={newComment}
             onChange={(event) => {
-              setNewComment(event.target.value)
+              setNewComment(event.target.value) //grab data to be used later
             }} />
           <button onClick={addComment}> Add Comment </button> 
           </div>
